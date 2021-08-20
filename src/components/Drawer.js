@@ -1,10 +1,11 @@
-function Draver(){
-    return(
-      <div  className="overlay">
+function Draver(props) {
+  return (
+    <div className="overlay">
       <div className="drawer">
         <h2 className="mb-30 d-flex justify-between">
           Корзина
           <img
+            onClick={props.onClose}
             className="removeBtn"
             src="/images/btn-remove.svg"
             alt="remove"
@@ -12,42 +13,26 @@ function Draver(){
         </h2>
 
         <div className="items">
-          <div className="cartItem d-flex align-center mb-20">
-            <img
-              className="mr-20"
-              width={70}
-              height={70}
-              src="/images/sneaker1.jpg"
-              alt="sneaker"
-            />
-            <div className="mr-20">
-              <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-              <b>12 999 руб.</b>
+          {props.items.map((obj) => (
+            <div className="cartItem d-flex align-center mb-20">
+              <img
+                className="mr-20"
+                width={70}
+                height={70}
+                src="/images/sneaker1.jpg"
+                alt="sneaker"
+              />
+              <div className="mr-20">
+                <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
+                <b>12 999 руб.</b>
+              </div>
+              <img
+                className="removeBtn"
+                src="/images/btn-remove.svg"
+                alt="remove"
+              />
             </div>
-            <img
-              className="removeBtn"
-              src="/images/btn-remove.svg"
-              alt="remove"
-            />
-          </div>
-          <div className="cartItem d-flex align-center mb-20">
-            <img
-              className="mr-20"
-              width={70}
-              height={70}
-              src="/images/sneaker2.jpg"
-              alt="sneaker"
-            />
-            <div className="mr-20">
-              <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-              <b>12 999 руб.</b>
-            </div>
-            <img
-              className="removeBtn"
-              src="/images/btn-remove.svg"
-              alt="remove"
-            />
-          </div>
+          ))}
         </div>
         <div className="cartTotalBlock">
           <ul>
@@ -68,7 +53,7 @@ function Draver(){
         </div>
       </div>
     </div>
-    );
+  );
 }
 
 export default Draver;

@@ -18,7 +18,7 @@ body {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
   border-radius: 20px;
   max-width: 1080px;
-  margin: 50px auto;
+  margin: 50px auto 0;
 
 }
 
@@ -44,47 +44,11 @@ header {
     li {
       display: flex;
       align-items: center;
+      cursor: pointer;
     }
   }
 }
 
-.card {
-  background: #FFFFFF;
-  border: 1px solid #F3F3F3;
-  border-radius: 40px;
-  padding: 30px;
-  max-width: 210px;
-  margin-right: 30px;
-  transition: all .2s;
-
-  &:hover {
-    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
-    transform: translateY(-5px);
-  }
-
-  span {
-    font-size: 13px;
-    opacity: .5;
-    text-transform: uppercase;
-
-  }
-
-  b {
-    font-size: 13px;
-  }
-
-  h4 {
-    font-size: 14px;
-    line-height: 17px;
-    color: #000000;
-    width: 220px;
-  }
-}
-
-.favorite {
-  position: absolute;
-  cursor: pointer;
-}
 
 .button {
   width: 32px;
