@@ -27,7 +27,9 @@ function App() {
 
   return (
     <div className="wrapper">
-      {cartOpened ? <Draver items = {cartItems} onClose={() => setCartOpened(false)} /> : null}
+      {cartOpened ? (
+        <Draver items={cartItems} onClose={() => setCartOpened(false)} />
+      ) : null}
       <Header onClickCart={() => setCartOpened(true)} />
       <div className="content p-40">
         <div className="d-flex align-center justify-between mb-40">
@@ -44,7 +46,7 @@ function App() {
               price={item.price}
               imageUrl={item.imageUrl}
               onFavorite={() => console.log("Добавили в закладки")}
-              onPlus={(obj) => console.log(obj) }
+              onPlus={(obj) => onAddToCart(obj)}
             />
           ))}
         </div>
