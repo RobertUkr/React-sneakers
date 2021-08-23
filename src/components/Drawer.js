@@ -1,11 +1,11 @@
-function Draver(props) {
+function Draver({ onClose, onRemove, items = [] }) {
   return (
     <div className="overlay">
       <div className="drawer">
         <h2 className="mb-30 d-flex justify-between">
           Корзина
           <img
-            onClick={props.onClose}
+            onClick={onClose}
             className="removeBtn"
             src="/images/btn-remove.svg"
             alt="remove"
@@ -13,8 +13,11 @@ function Draver(props) {
         </h2>
 
         <div className="items">
-          {props.items.map((obj) => (
-            <div className="cartItem d-flex align-center mb-20">
+          {items.map((obj) => (
+            <div
+              className={"cartItem d-flex align-center mb-20 111" + obj.id}
+              data-id={obj.id}
+            >
               <img
                 className="mr-20"
                 width={70}
@@ -27,6 +30,7 @@ function Draver(props) {
                 <b>{obj.price} руб.</b>
               </div>
               <img
+                onClick={() => onRemove(obj.id)}
                 className="removeBtn"
                 src="/images/btn-remove.svg"
                 alt="remove"
