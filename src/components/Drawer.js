@@ -15,6 +15,7 @@ function Draver({ onClose, onRemove, items = [] }) {
         <div className="items">
           {items.map((obj) => (
             <div
+              key={obj.id}
               className={"cartItem d-flex align-center mb-20 111" + obj.id}
               data-id={obj.id}
             >
